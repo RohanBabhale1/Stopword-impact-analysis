@@ -1,0 +1,105 @@
+
+REUTERS-21578 DATASET - EXPLORATORY DATA ANALYSIS SUMMARY
+=========================================================
+
+Analysis Date: 2026-02-15
+
+DATASET OVERVIEW
+----------------
+Total Articles: 21,578
+Articles with Topics: 11,367 (52.7%)
+Articles with Body Text: 19,043 (88.3%)
+Unique Topics: 120
+Topics with ≥20 documents: 57
+
+TEXT STATISTICS
+---------------
+Average Article Length: 136 words
+Median Article Length: 90 words
+Standard Deviation: 135 words
+Range: 2 - 1669 words
+
+VOCABULARY ANALYSIS
+-------------------
+Total Words: 2,490,826
+Unique Words: 38,858
+Vocabulary Diversity: 1.56%
+
+STOPWORD ANALYSIS
+-----------------
+Stopwords in Corpus: 915,202 (36.74%)
+Non-stopwords: 1,575,624 (63.26%)
+Average Stopword Ratio per Article: 31.32%
+NLTK Stopword List Size: 198 words
+
+TOP 10 TOPICS BY FREQUENCY
+--------------------------
+   Topic  Count
+    earn   3987
+     acq   2448
+money-fx    801
+   crude    634
+   grain    628
+   trade    552
+interest    513
+   wheat    306
+    ship    305
+    corn    254
+
+TOP 10 MOST FREQUENT WORDS
+--------------------------
+Word  Frequency
+ the     144339
+  of      72347
+  to      68943
+ and      53923
+said      52915
+  in      52672
+   a      51837
+   s      29975
+ for      26053
+ mln      25565
+
+TOP 10 MOST FREQUENT STOPWORDS
+------------------------------
+Stopword  Frequency
+     the     144339
+      of      72347
+      to      68943
+     and      53923
+      in      52672
+       a      51837
+       s      29975
+     for      26053
+      it      22639
+      on      18435
+
+KEY INSIGHTS FOR PROJECT
+------------------------
+1. Stopwords constitute approximately 36.7% of the corpus
+2. Removing stopwords could reduce feature space by ~36.7%
+3. Document length varies significantly (CV: 99.7%)
+4. Multi-label classification task with 57 viable categories
+5. Rich vocabulary (38,858 unique words) suitable for text classification
+
+FILES GENERATED
+---------------
+Tables:
+  - dataset_summary.csv
+  - topic_distribution.csv
+  - text_length_statistics.csv
+  - word_frequencies.csv
+  - stopword_frequencies.csv
+
+Figures:
+  - top_20_topics.png
+  - topic_frequency_distribution.png
+  - text_length_distribution.png
+  - length_categories.png
+  - top_30_words.png
+  - zipf_law.png
+  - stopword_analysis.png
+  - stopword_ratio_distribution.png
+  - stopword_ratio_vs_length.png
+
+=========================================================
