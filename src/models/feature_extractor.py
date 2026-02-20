@@ -10,15 +10,15 @@ class FeatureExtractor:
         
         if method == 'tfidf':
             self.vectorizer = TfidfVectorizer(
-                max_features=max_features,
+                max_features=None,
                 min_df=2,
-                max_df=0.8
+                max_df=1.0
             )
         elif method == 'bow':
             self.vectorizer = CountVectorizer(
-                max_features=max_features,
+                max_features=None,
                 min_df=2,
-                max_df=0.8
+                max_df=1.0
             )
     
     def fit_transform(self, texts):
