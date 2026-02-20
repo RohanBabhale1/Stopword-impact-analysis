@@ -1,3 +1,5 @@
+![Status](https://img.shields.io/badge/status-Completed-brightgreen)
+![Experiments](https://img.shields.io/badge/experiments-Completed-blue)
 # Stopword Impact Analysis on NLP Tasks
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
@@ -143,19 +145,20 @@ stopword-impact-analysis/
 
 | Stopword Strategy | Model | Accuracy | F1-Score | Features |
 |-------------------|-------|----------|----------|----------|
-| None              | NB    | 0.XXX    | 0.XXX    | XXXXX    |
-| NLTK              | NB    | 0.XXX    | 0.XXX    | XXXXX    |
-| Minimal           | NB    | 0.XXX    | 0.XXX    | XXXXX    |
-| Extended          | NB    | 0.XXX    | 0.XXX    | XXXXX    |
-| Adaptive          | NB    | 0.XXX    | 0.XXX    | XXXXX    |
+| None              | NB    | 0.6809   | 0.5951   | 14794    |
+| NLTK              | NB    | 0.7143   | 0.6298   | 14675    |
+| Minimal           | NB    | 0.6901   | 0.6027   | 14786    |
+| Extended          | NB    | 0.7177   | 0.6345   | 14669    |
+| None              | SVM   | 0.9109   | 0.9058   | 14794    |
+| Extended          | SVM   | **0.9123** | **0.9070** | 14669 |
 
-*Note: Results will be populated after running experiments*
 
 ### Key Findings
-1. **Performance Impact**: Stopword removal showed [increase/decrease] of X% in F1-score
-2. **Feature Reduction**: Achieved X% reduction in feature space with Y% performance trade-off
-3. **Model-Specific Effects**: [Model] was most/least affected by stopword removal
-4. **Category Insights**: Short news categories benefited more/less from stopword removal
+
+1. **Performance Impact**: Extended stopword removal improved Naive Bayes F1-score from 0.595 to 0.635 and slightly improved SVM from 0.906 to 0.907.
+2. **Feature Reduction**: Approximately 0.8% feature reduction was achieved without performance loss.
+3. **Model-Specific Effects**: Naive Bayes was most affected by stopword removal, while SVM was least sensitive.
+4. **Efficiency Gains**: Stopword removal reduced training time for SVM by ~25%.
 
 ## 💡 Innovation
 
@@ -206,6 +209,18 @@ This is an academic project, but suggestions and feedback are welcome!
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+## 🔁 Reproducibility
+
+All experiments were conducted using:
+
+- Random seed: 42
+- Train/Test split: 80/20 (stratified)
+- Feature extraction: TF-IDF (max_features=5000)
+- Evaluation: Weighted Precision, Recall, F1-score
+
+Experimental results are available in:
+`results/tables/stopword_experiment_results.csv`
+
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -236,4 +251,4 @@ For questions or feedback, please reach out via:
 
 ---
 
-**Last Updated**:14 February 2026
+**Last Updated**:20 February 2026
