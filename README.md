@@ -29,7 +29,7 @@ This project analyzes the impact of stopword removal on various Natural Language
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/stopword-impact-analysis.git
+git clone https://github.com/RohanBabhale1/stopword-impact-analysis.git
 cd stopword-impact-analysis
 
 # Create virtual environment (recommended)
@@ -168,13 +168,12 @@ We developed a novel approach to create category-specific stopword lists based o
 - Preserves important context-specific words
 - Achieves better balance between feature reduction and performance
 
-**Results**: Adaptive approach showed X% improvement over standard NLTK stopwords while reducing features by Y%.
+**Status**: Adaptive stopword generation will be implemented and evaluated.
 
 ## 📚 Literature Survey
 
-Key papers reviewed:
-1. Author et al. (Year) - "Title"
-2. Author et al. (Year) - "Title"
+Key papers reviewed are documented in:
+`docs/survey/literature_review.md`
 
 Full literature review available in [`docs/survey/literature_review.md`](docs/survey/literature_review.md)
 
