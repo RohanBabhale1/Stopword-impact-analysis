@@ -1,4 +1,4 @@
-![Status](https://img.shields.io/badge/status-Completed-brightgreen)
+![Status](https://img.shields.io/badge/status-In%20Progress-yellow)
 ![Experiments](https://img.shields.io/badge/experiments-Completed-blue)
 # Stopword Impact Analysis on NLP Tasks
 
