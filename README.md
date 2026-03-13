@@ -1,4 +1,4 @@
-![Status](https://img.shields.io/badge/status-In%20Progress-yellow)
+![status](https://img.shields.io/badge/status-completed-success)
 ![Experiments](https://img.shields.io/badge/experiments-Completed-blue)
 # Stopword Impact Analysis on NLP Tasks
 
@@ -242,13 +242,8 @@ For questions or feedback, please reach out via:
 - Email: babhale.rohan6@gmail.com
 - GitHub Issues: [Create an issue](https://github.com/RohanBabhale1/stopword-impact-analysis/issues)
 
-## 📅 Project Timeline
 
-- Week 1: Literature survey and data exploration
-- Week 2-3: Implementation and experiments
-- Week 4: Innovation and analysis
-- Week 5: Documentation and final report
 
 ---
 
-**Last Updated**:20 February 2026
+**Last Updated**:13 March 2026
