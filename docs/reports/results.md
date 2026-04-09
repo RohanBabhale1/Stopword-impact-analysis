@@ -188,7 +188,59 @@ Adaptive stopwords provide the strongest balance between:
 
 ---
 
-# 11. Final Conclusions
+# 11. Research Questions — Answers
+
+## RQ1. Does stopword removal improve, degrade, or leave unchanged classification performance?
+
+Stopword removal **improves** performance for Naive Bayes and Logistic Regression, and **leaves largely unchanged** the performance of SVM.
+
+- Naive Bayes improved from F1 = 0.595 (baseline) to 0.716 (adaptive) — a **20.3% gain**.
+- Logistic Regression improved from F1 = 0.843 (baseline) to 0.859 (adaptive) — a **1.9% gain**.
+- SVM ranged only between F1 = 0.906 and 0.907 across all static strategies — a spread of just **0.11%** — confirming near-complete robustness to stopword removal.
+
+The direction and magnitude of improvement is therefore **classifier-dependent**: generative models benefit strongly, while margin-based models are largely unaffected.
+
+---
+
+## RQ2. Which strategy best balances performance with feature-space economy?
+
+The **Adaptive TF-IDF strategy** offers the best balance overall.
+
+| Strategy | Best F1 (NB) | Best F1 (SVM) | Feature Reduction |
+|---|---|---|---|
+| Extended | 0.635 | 0.907 | 0.84% |
+| Adaptive | 0.716 | 0.901 | 87.59% |
+
+While Extended stopwords achieve the highest SVM F1, they compress the vocabulary by less than 1%. The Adaptive strategy achieves comparable SVM performance (only 0.66% lower), the highest NB and LR performance, and reduces the feature space by 87.59% — from 14,794 to just 1,836 features. For most real-world deployments, Adaptive provides the most efficient trade-off.
+
+---
+
+## RQ3. Can a data-driven adaptive strategy outperform static lists?
+
+**Yes.** The Adaptive strategy outperforms all static strategies for both Naive Bayes and Logistic Regression.
+
+- Over the best static strategy (Extended), Adaptive improves NB F1 by **12.76%** (0.635 → 0.716).
+- LR F1 also improves slightly (0.855 → 0.859).
+- Only SVM sees a minor drop of 0.66%, which is within acceptable bounds given the 87.59% compression achieved.
+
+The Adaptive strategy succeeds because it identifies Reuters-specific low-information terms — such as *mln*, *pct*, *reuter*, *dlrs* — that appear on no standard list but add noise uniformly across all categories.
+
+---
+
+## RQ4. What computational efficiency gains come from aggressive vocabulary pruning?
+
+Aggressive pruning through the Adaptive strategy produced **substantial efficiency gains**:
+
+- **Logistic Regression**: training time reduced from ~11.35 sec to ~2.96 sec — a **73.8% speedup**.
+- **SVM**: significant training time reduction due to the smaller feature matrix.
+- **Naive Bayes**: further speed improvement on top of static strategy gains.
+- **Feature space**: compressed from 14,794 to 1,836 features — an **87.59% reduction**.
+
+These gains confirm that dimensionality reduction directly translates to faster training, lower memory usage, and reduced inference cost — with minimal accuracy trade-off for most classifiers.
+
+---
+
+# 12. Final Conclusions
 
 1. Static stopword removal yields consistent but modest improvements.
 2. Naive Bayes is highly sensitive to noisy vocabulary.
